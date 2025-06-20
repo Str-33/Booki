@@ -52,32 +52,22 @@ i {
     justify-content: space-between;
     align-items: center;
     max-width: 90rem;
-    height: 4.9375rem;
-    padding: 0 2rem;
-    margin: 0 auto 1.875rem auto;
+    height: 4.9375rem; 
+    margin-bottom: 1.875rem; 
 }
 
 /* Logo */
 .top-nav img {
     width: 3.8125rem; 
     height: 1.1875rem; 
+    padding: 1.875rem 3.125rem 1.875rem 0; 
 }
 
-/* Navigation */
 nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end; 
-}
-
-/* Liste des liens */
-ul.menu {
     display: flex;
     gap: 4.25rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
+    height: 2.0625rem; 
+    padding: 0 0 0 3.125rem; 
 }
 
 /* Liens */
