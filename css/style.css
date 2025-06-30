@@ -90,24 +90,28 @@ nav ul.menu li a {
     padding-top: 14px; 
 }
 
-/* Effet de soulignement au survol */
-nav ul.menu li a::before {
+/* MODIFICATION : Effet de soulignement au survol EN HAUT pour desktop/tablette */
+nav ul.menu li a::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    height: 2px;       /* 0.125rem → 2px */
+    height: 2px;
     width: 100%;
     background-color: transparent;
     transition: background-color 0.3s;
 }
 
-nav ul.menu li a:hover::before,
-nav ul.menu li a.active::before {
+nav ul.menu li a:hover::after,
+nav ul.menu li a:active::after,
+nav ul.menu li a:focus::after,
+nav ul.menu li a.active::after {
     background-color: var(--main-color);
 }
 
 nav ul.menu li a:hover,
+nav ul.menu li a:active,
+nav ul.menu li a:focus,
 nav ul.menu li a.active {
     color: var(--main-color);
 }
@@ -528,7 +532,6 @@ nav ul.menu li a.active {
 
     .activités-list {
         display: flex;
-        height: 270px;
         width: 100%;
         object-fit: cover;
     }
@@ -563,29 +566,55 @@ nav ul.menu li a.active {
         align-items: center;
     }
 
-    .menu img {
+    .top-nav img {
         padding: 30px;
     }
 
-    .menu {
+    .top-nav nav {
         width: 100%;
         padding: 0;
+        margin: 0;
     }
 
-    .menu nav {
+    .menu {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
         gap: 0;
+    }
+
+    .menu li {
+        width: 50%;
+        margin: 0;
         padding: 0;
     }
 
     .menu a {
-        width: 50%;
+        width: 100%;
         border-bottom: 2px solid transparent;
+        border-top: 2px solid transparent;
         border-top: 0;
-        padding-top: 0;
+        padding: 15px 0;
+        margin: 0;
+        text-align: center;
+        display: block;
+        box-sizing: border-box;
+        text-decoration: none;
     }
 
-    .menu a:hover {
-        border-top: transparent;
+    /* MODIFICATION : Barre bleue en BAS pour mobile */
+    nav ul.menu li a::after {
+        top: auto;
+        bottom: 0;
+    }
+
+    .menu a:hover,
+    .menu a:active,
+    .menu a:focus {
+        border-top: 2px solid transparent; 
         border-bottom: 2px solid var(--main-color);
     }
 
@@ -649,7 +678,6 @@ nav ul.menu li a.active {
         max-height: 24px;
     }
 
-
     .hebergements-and-populaires {
         flex-direction: column-reverse;
         gap: 15px;
@@ -692,13 +720,13 @@ nav ul.menu li a.active {
     }
     .populaires-cards {
         display: flex;
-        flex-direction: column;  /* Met les cartes en colonne sur mobile */
+        flex-direction: column;  
         align-items: flex-start;
         gap: 15px;
     }
     
     .populaires-cards .card {
-        width: 100%;  /* Assure que chaque carte prend toute la largeur */
+        width: 100%;  
     }
 
     .card {
@@ -717,7 +745,6 @@ nav ul.menu li a.active {
         align-items: flex-start;
     }
     
-
     .activités-list {
         display: flex;
         width: 100%;
